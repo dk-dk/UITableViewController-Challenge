@@ -1,5 +1,5 @@
 //
-//  DMFViewController.h
+//  DMFTableViewController.h
 //  UITableViewController Challenge
 //
 //  Created by Mac on 16/10/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DMFViewController : UIViewController
+@interface DMFTableViewController : UITableViewController
 
 @end

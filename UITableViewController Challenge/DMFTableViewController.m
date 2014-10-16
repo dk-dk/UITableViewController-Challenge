@@ -46,14 +46,24 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    switch (section) {
+        case 0:
+            return 2;
+            break;
+        case 1:
+            return 1;
+            break;
+        default: // case 2
+            return 3;
+            break;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,6 +72,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = @"I am in section 0";
+            break;
+            
+        case 1:
+            cell.textLabel.text = @"Another section";
+            break;
+            
+        case 2:
+            cell.textLabel.text = [NSString stringWithFormat:@"cell %i", indexPath.row];
+            break;
+    }
     
     return cell;
 }
